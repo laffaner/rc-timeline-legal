@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net; object-src 'none';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password — RC Timeline</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <img src="../assets/icon.png" alt="RC Timeline">
+    <p class="app-name">RC Timeline</p>
+    <p class="app-tagline">Real Care Timeline</p>
+  </header>
+
+  <div id="state-loading" class="card">
+    <p class="secondary-text">Verifying your reset link&hellip;</p>
+  </div>
+
+  <div id="state-error" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Link expired or invalid</h2>
+    <p>This password reset link has expired or has already been used. Links are valid for 1 hour.</p>
+    <p>Return to the app and tap &ldquo;Forgot password?&rdquo; to request a new one.</p>
+  </div>
+
+  <div id="state-form" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Set new password</h2>
+    <p class="secondary-text" style="margin-top:0;margin-bottom:16px;">Must be at least 12 characters, including uppercase, lowercase, a digit, and a symbol.</p>
+    <p id="form-error" class="error-text"></p>
+    <form id="reset-form" novalidate>
+      <label for="new-password">New password</label>
+      <input type="password" id="new-password" class="input" placeholder="New password" autocomplete="new-password">
+      <label for="confirm-password">Confirm password</label>
+      <input type="password" id="confirm-password" class="input" placeholder="Confirm password" autocomplete="new-password">
+      <button type="submit" id="submit-btn" class="btn-primary">Set password</button>
+    </form>
+  </div>
+
+  <div id="state-success" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Password updated</h2>
+    <p class="secondary-text">Your password has been changed. Open RC Timeline and sign in with your new password.</p>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.8/dist/umd/supabase.min.js"
+        integrity="sha384-Tve8O+C6PBzsIMK/IRCwHbi8fyEzXIlIs6OfVBZHubplwYhaQF/4Mzxqgg+pp/oy"
+        crossorigin="anonymous"></script>
+<script src="reset.js"></script>
+</body>
+</html>
