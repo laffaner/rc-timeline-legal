@@ -27,9 +27,18 @@
 
   var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
   if (isIOS) {
-    window.location.href = 'rctimeline://reset-password' + window.location.hash;
-    // After 600ms, if still on this page (app not installed), show the web form.
-    setTimeout(function () { initForm(accessToken, refreshToken); }, 600);
+    var appUrl = 'rctimeline://reset-password' + window.location.hash;
+    // Programmatic navigation works in Safari. WKWebView (Mail on iPad) blocks it
+    // silently, so we fall back to an explicit tap-to-open link after 600ms.
+    window.location.href = appUrl;
+    setTimeout(function () {
+      document.getElementById('open-app-link').href = appUrl;
+      document.getElementById('use-web-form-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        initForm(accessToken, refreshToken);
+      });
+      show('state-open-app');
+    }, 600);
   } else {
     initForm(accessToken, refreshToken);
   }
