@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net; object-src 'none';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmed — RC Timeline</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <img src="../assets/icon.png" alt="RC Timeline">
+    <p class="app-name">RC Timeline</p>
+    <p class="app-tagline">Real Care Timeline</p>
+  </header>
+
+  <div id="state-loading" class="card">
+    <p class="secondary-text">Confirming your email&hellip;</p>
+  </div>
+
+  <div id="state-open-app" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Email confirmed</h2>
+    <p class="secondary-text">Your email address has been confirmed. Tap below to open RC Timeline and get started.</p>
+    <a id="open-app-link" href="#" class="btn-primary" style="display:block;text-align:center;">Open RC Timeline</a>
+    <p class="secondary-text" style="margin-top:16px;text-align:center;font-size:13px;">
+      App not installed? <a href="https://apps.apple.com/app/rc-timeline/id6746792492">Download it from the App Store.</a>
+    </p>
+  </div>
+
+  <div id="state-confirmed" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Email confirmed</h2>
+    <p class="secondary-text">Your email address has been confirmed. Open RC Timeline on your iPhone or iPad to sign in and get started.</p>
+  </div>
+
+  <div id="state-error" class="card" style="display:none;">
+    <h2 style="margin-top:0;">Link expired or invalid</h2>
+    <p>This confirmation link has expired or has already been used. Links are valid for 24 hours.</p>
+    <p>Return to the app and sign up again, or contact support if the problem persists.</p>
+  </div>
+
+</div>
+<script src="confirm.js"></script>
+</body>
+</html>
