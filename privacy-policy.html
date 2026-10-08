@@ -16,7 +16,7 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">RC Timeline (Real Care Timeline) &mdash; Last updated: 7 October 2026</p>
+<p class="subtitle">RC Timeline (Real Care Timeline) &mdash; Last updated: 8 October 2026</p>
 
 <p>This Privacy Policy explains how Colin Laffan (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) collects, uses, and protects your personal data when you use the RC Timeline app (&ldquo;the App&rdquo;). We take your privacy seriously, particularly given the sensitive nature of the care records this App is designed to hold.</p>
 
@@ -47,7 +47,7 @@
 </ul>
 
 <h3>Data collected when using AI extraction</h3>
-<p>When you use the document scan feature, the text extracted from your document (via on-device OCR) is sent to an AI service to pre-fill an event form. If you have entered a subject name in the App, that name may also be sent to improve extraction accuracy. See <a href="#third-parties">Third-Party Services</a> for details.</p>
+<p>When you use the document scan feature, the text extracted from your document (via on-device OCR) is sent through our server to an AI service to pre-fill an event form. Before it is sent, our server replaces the name of the person you are tracking care for with a placeholder wherever it appears in the text, and removes NHS numbers and labelled dates of birth. The name itself is never sent to the AI service. Other names or details in the document, such as a nickname or the names of professionals, may still be included. See <a href="#third-parties">Third-Party Services</a> for details.</p>
 
 <h2>2. How We Use Your Data</h2>
 
@@ -55,7 +55,7 @@
   <tr><th>Purpose</th><th>Data used</th><th>Legal basis</th></tr>
   <tr><td>Creating and managing your account</td><td>Email address</td><td>Contract performance</td></tr>
   <tr><td>Storing and displaying your care records</td><td>Subjects, events, documents</td><td>Contract performance</td></tr>
-  <tr><td>Pre-filling event forms from scanned documents</td><td>OCR text, subject name</td><td>Consent (you initiate the scan)</td></tr>
+  <tr><td>Pre-filling event forms from scanned documents</td><td>OCR text; subject name (used only on our server to remove it from the text)</td><td>Consent (you initiate the scan)</td></tr>
   <tr><td>Diagnosing crashes and fixing bugs</td><td>Crash reports</td><td>Legitimate interests</td></tr>
   <tr><td>Understanding how the App is used to improve it</td><td>Anonymised usage events</td><td>Legitimate interests</td></tr>
 </table>
@@ -86,7 +86,7 @@
   <tr>
     <td><strong>Anthropic (Claude AI)</strong></td>
     <td>AI extraction of care event data from scanned documents</td>
-    <td>OCR text of scanned document; optionally, subject name</td>
+    <td>OCR text of scanned document, with the subject&rsquo;s name, NHS numbers and labelled dates of birth removed</td>
     <td>United States</td>
   </tr>
 </table>
