@@ -140,3 +140,29 @@ th, td { border: 1px solid var(--color-subtle); padding: 10px 12px; text-align: 
 th { background: var(--color-surface); font-weight: bold; }
 .highlight { background: var(--color-surface); border-left: 4px solid var(--color-primary); padding: 12px 16px; margin: 20px 0; border-radius: 2px; }
 .subtitle { color: var(--color-secondary-text); font-size: 13px; margin-bottom: 32px; }
+
+/* Termly export (tos.html): its own <style> block and inline styles hard-code light-mode colours.
+   Re-map them to the tokens so the page follows light and dark mode, including Termly's credit line
+   below the container. Each rule is one element more specific than Termly's, and the order (body,
+   then headings, then links) lets a link inside a heading keep the link colour. Termly already makes
+   every background inside the body transparent. */
+body [data-custom-class='body'],
+body [data-custom-class='body'] *,
+body [data-custom-class='body_text'],
+body [data-custom-class='body_text'] * {
+  color: var(--color-secondary-text) !important;
+}
+
+body [data-custom-class='title'],
+body [data-custom-class='title'] *,
+body [data-custom-class='heading_1'],
+body [data-custom-class='heading_1'] *,
+body [data-custom-class='heading_2'],
+body [data-custom-class='heading_2'] * {
+  color: var(--color-on-surface) !important;
+}
+
+body [data-custom-class='link'],
+body [data-custom-class='link'] * {
+  color: var(--color-primary-text) !important;
+}
