@@ -1,6 +1,8 @@
-@import url("https://cdn.jsdelivr.net/gh/laffaner/care-timeline-app@main/web/tokens.css");
+/* Brand colours: a copy of the app's web/tokens.css, kept in step by its "Sync web tokens" workflow. */
+@import url("tokens.css");
 
 :root {
+  color-scheme: light dark;
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-4: 16px;
@@ -90,13 +92,20 @@ body {
   font-family: inherit;
   background: var(--color-surface);
   color: var(--color-on-surface);
-  border: 1.5px solid var(--color-subtle);
+  border: 1.5px solid var(--color-secondary-text);
   border-radius: 12px;
-  outline: none;
   margin-bottom: var(--spacing-4);
 }
 
 .input:focus { border-color: var(--color-primary); }
+
+a:focus-visible,
+button:focus-visible,
+.btn-primary:focus-visible,
+.input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
 
 label {
   display: block;
